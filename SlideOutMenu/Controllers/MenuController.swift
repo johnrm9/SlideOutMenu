@@ -8,20 +8,55 @@
 
 import UIKit
 
+struct MenuItem {
+    let icon: UIImage
+    let title: String
+}
+class MenuItemsList {
+
+    private let menuItems: [MenuItem] = [
+        MenuItem(icon: #imageLiteral(resourceName: "profile"), title: "Profile"),
+        MenuItem(icon: #imageLiteral(resourceName: "lists"), title: "Lists"),
+        MenuItem(icon: #imageLiteral(resourceName: "bookmarks"), title: "Bookmarks"),
+        MenuItem(icon: #imageLiteral(resourceName: "moments"), title: "Moments")
+    ]
+
+    subscript(row: Int) -> MenuItem {
+        return menuItems[row]
+    }
+
+    var count: Int {
+        return menuItems.count
+    }
+}
+
 class MenuController: UITableViewController {
-    let cellId: String = "cellId"
+    private let cellId: String = "cellId"
+
+    private let menuItemslist = MenuItemsList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+
+        tableView.separatorStyle = .none
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return CustomMenuHeaderView()
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 200
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return menuItemslist.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
-        cell.textLabel?.text = "Row: \(indexPath.row)"
+        let cell = MenuItemCell(style: .default, reuseIdentifier: cellId)
+
+        let menuItem = menuItemslist[indexPath.row]
+        cell.menuItem = menuItem
         return cell
     }
 }
