@@ -39,6 +39,7 @@ class MenuController: UITableViewController {
         super.viewDidLoad()
 
         tableView.separatorStyle = .none
+        tableView.alwaysBounceVertical = false
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -52,6 +53,7 @@ class MenuController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItemslist.count
     }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = MenuItemCell(style: .default, reuseIdentifier: cellId)
 

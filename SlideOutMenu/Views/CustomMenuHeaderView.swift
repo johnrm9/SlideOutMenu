@@ -37,7 +37,6 @@ class CustomMenuHeaderView: BaseView {
         let width = imageView.intrinsicContentSize.width
         imageView.layer.cornerRadius = width / 2
         imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .red
         return imageView
     }()
 
@@ -75,9 +74,14 @@ class CustomMenuHeaderView: BaseView {
     }
 
     fileprivate func setupStatsAttributedText() {
-        let attributedText = NSMutableAttributedString(string: "42 ", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .medium)])
+        let following: NSNumber = 42
+        let followers: NSNumber = 7091
+
+        let attributedText = NSMutableAttributedString(string: "\(following) ",
+            attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .medium)])
         attributedText.append(NSAttributedString(string: "Following  ", attributes: [.foregroundColor: UIColor.black]))
-        attributedText.append(NSAttributedString(string: "7091 ", attributes: [.font: UIFont.systemFont(ofSize: 17, weight: .medium)]))
+        attributedText.append(NSAttributedString(string: "\(followers) ",
+            attributes: [.font: UIFont.systemFont(ofSize: 17, weight: .medium)]))
         attributedText.append(NSAttributedString(string: "Followers", attributes: [.foregroundColor: UIColor.black]))
         statsLabel.attributedText = attributedText
     }
