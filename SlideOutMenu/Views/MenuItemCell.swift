@@ -38,18 +38,20 @@ class MenuItemCell: BaseCell {
     }
 
     fileprivate func setupStackView() {
-        let stackView = UIStackView(arrangedSubviews: [iconImageView, titleLabel, UIView()])
-        stackView.spacing = 12
+        let arrangedSubviews = [
+            iconImageView,
+            titleLabel,
+            UIView()
+        ]
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews, spacing: 12)
 
         addSubviews(stackView)
-
         stackView.fillSuperview()
+
         stackView.layoutMargins = UIEdgeInsets(vertical: 8, horizontal: 12)
     }
 
     fileprivate class IconImageView: UIImageView {
-        override var intrinsicContentSize: CGSize {
-            return CGSize(width: 44, height: 44)
-        }
+        override var intrinsicContentSize: CGSize { return CGSize(width: 44, height: 44) }
     }
 }

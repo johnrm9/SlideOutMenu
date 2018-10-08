@@ -50,19 +50,15 @@ class CustomMenuHeaderView: BaseView {
     fileprivate func setupStackView() {
         let rightSpacerView = UIView()
         let arrangedSubviews = [
-            UIView(),
             UIStackView(arrangedSubviews: [profileImageView, rightSpacerView]),
             nameLabel,
             usernameLabel,
             SpacerView(space: 16),
             statsLabel
         ]
-        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
-        stackView.axis = .vertical
-        stackView.spacing = 4
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews, axis: .vertical, spacing: 4)
 
         addSubviews(stackView)
-
         stackView.fillSuperview()
 
         stackView.layoutMargins = UIEdgeInsets(all: 24)
@@ -97,13 +93,29 @@ extension UIEdgeInsets {
         if horizontal != 0 { (left, right) = (horizontal, horizontal) }
     }
 }
+
 extension UIView {
-    func fillSuperview() {
-        if let superview = superview {
+    func fillSuperview(_ containerView: UIView? = nil) {
+        if let containerView = containerView {
+            topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+            leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+            bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+            trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+
+        } else if let superview = superview {
             topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
             leadingAnchor.constraint(equalTo: superview.leadingAnchor).isActive = true
             bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
             trailingAnchor.constraint(equalTo: superview.trailingAnchor).isActive = true
         }
+    }
+}
+extension UIStackView {
+    convenience init(arrangedSubviews: [UIView],
+                     axis: NSLayoutConstraint.Axis = .horizontal,
+                     spacing: CGFloat = UIStackView.spacingUseDefault) {
+        self.init(arrangedSubviews: arrangedSubviews)
+        self.axis = axis
+        self.spacing = spacing
     }
 }

@@ -7,26 +7,14 @@
 //
 
 import UIKit
-
-struct MenuItem {
-    let icon: UIImage
-    let title: String
+protocol BaseSlidingControllerDelegate: class {
+    func didSelectMenuItem(with item: MenuItemType)
 }
-class MenuItemsList {
 
-    private let menuItems: [MenuItem] = [
-        MenuItem(icon: #imageLiteral(resourceName: "profile"), title: "Profile"),
-        MenuItem(icon: #imageLiteral(resourceName: "lists"), title: "Lists"),
-        MenuItem(icon: #imageLiteral(resourceName: "bookmarks"), title: "Bookmarks"),
-        MenuItem(icon: #imageLiteral(resourceName: "moments"), title: "Moments")
-    ]
-
-    subscript(row: Int) -> MenuItem {
-        return menuItems[row]
-    }
-
-    var count: Int {
-        return menuItems.count
+extension MenuController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let slidingController = UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingController
+        slidingController?.didSelectMenuItem(with: MenuItemType.allCases[indexPath.row])
     }
 }
 
@@ -39,15 +27,11 @@ class MenuController: UITableViewController {
         super.viewDidLoad()
 
         tableView.separatorStyle = .none
-        tableView.alwaysBounceVertical = false
+        //tableView.alwaysBounceVertical = false
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return CustomMenuHeaderView()
-    }
-
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 200
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
