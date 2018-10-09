@@ -58,7 +58,7 @@ class CustomMenuHeaderView: BaseView {
         ]
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews, axis: .vertical, spacing: 4)
 
-        addSubviews(stackView)
+        addSubview(stackView)
         stackView.fillSuperview()
 
         stackView.layoutMargins = UIEdgeInsets(all: 24)
@@ -80,42 +80,5 @@ class CustomMenuHeaderView: BaseView {
             attributes: [.font: UIFont.systemFont(ofSize: 17, weight: .medium)]))
         attributedText.append(NSAttributedString(string: "Followers", attributes: [.foregroundColor: UIColor.black]))
         statsLabel.attributedText = attributedText
-    }
-}
-extension UIEdgeInsets {
-    public init(all: CGFloat = 0) {
-        self.init()
-        if all != 0 { (top, bottom, left, right) = (all, all, all, all) }
-    }
-    public init(vertical: CGFloat = 0, horizontal: CGFloat = 0) {
-        self.init()
-        if vertical != 0 { (top, bottom) = (vertical, vertical) }
-        if horizontal != 0 { (left, right) = (horizontal, horizontal) }
-    }
-}
-
-extension UIView {
-    func fillSuperview(_ containerView: UIView? = nil) {
-        if let containerView = containerView {
-            topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-            leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
-            bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-            trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-
-        } else if let superview = superview {
-            topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-            leadingAnchor.constraint(equalTo: superview.leadingAnchor).isActive = true
-            bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
-            trailingAnchor.constraint(equalTo: superview.trailingAnchor).isActive = true
-        }
-    }
-}
-extension UIStackView {
-    convenience init(arrangedSubviews: [UIView],
-                     axis: NSLayoutConstraint.Axis = .horizontal,
-                     spacing: CGFloat = UIStackView.spacingUseDefault) {
-        self.init(arrangedSubviews: arrangedSubviews)
-        self.axis = axis
-        self.spacing = spacing
     }
 }

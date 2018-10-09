@@ -7,4 +7,5 @@ target 'SlideOutMenu' do
 
   # Pods for SlideOutMenu
   pod 'SwiftLint'
+  pod 'GestureRecognizerClosures', '~> 4'
 end

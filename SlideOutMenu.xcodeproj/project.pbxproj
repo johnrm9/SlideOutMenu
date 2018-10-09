@@ -11,10 +11,19 @@
 		DC04A1282165BDE4004D5BEE /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1272165BDE4004D5BEE /* MenuItemCell.swift */; };
 		DC04A12A2165BEB4004D5BEE /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04A1292165BEB4004D5BEE /* BaseCell.swift */; };
 		DC50FB10215BE6A50016CBB9 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC50FB0F215BE6A40016CBB9 /* MenuController.swift */; };
+		DC6EE8A2216B6C0A004E98B9 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EE8A1216B6C0A004E98B9 /* UIColorExtensions.swift */; };
+		DC6EE8A4216B7038004E98B9 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EE8A3216B7038004E98B9 /* UIViewExtensions.swift */; };
+		DC6EE8A6216B70C7004E98B9 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EE8A5216B70C7004E98B9 /* UIViewControllerExtensions.swift */; };
+		DC6EE8A8216B7205004E98B9 /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EE8A7216B7205004E98B9 /* UIEdgeInsetsExtensions.swift */; };
+		DC6EE8AA216B7268004E98B9 /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EE8A9216B7268004E98B9 /* UIStackViewExtensions.swift */; };
 		DC7B697321646E9800A12F2F /* CustomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B697221646E9800A12F2F /* CustomMenuHeaderView.swift */; };
 		DC7B69752164825F00A12F2F /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B69742164825F00A12F2F /* SpacerView.swift */; };
 		DC7B69782164833800A12F2F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B69772164833800A12F2F /* BaseView.swift */; };
 		DC8290ED2161EC2000416BB5 /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8290EC2161EC2000416BB5 /* BaseSlidingController.swift */; };
+		DCA67DB6216B10CF0085FE0D /* ChatroomsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA67DB5216B10CF0085FE0D /* ChatroomsMenuController.swift */; };
+		DCA67DB8216B1BA60085FE0D /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA67DB7216B1BA60085FE0D /* ColorAssets.xcassets */; };
+		DCA67DBA216B22BB0085FE0D /* ChatroomMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA67DB9216B22BB0085FE0D /* ChatroomMenuCell.swift */; };
+		DCA9E63E216C3B7C000B83AF /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA9E63D216C3B7C000B83AF /* BaseLabel.swift */; };
 		DCB807D52165ECCA00766580 /* MenuItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB807D42165ECCA00766580 /* MenuItemsList.swift */; };
 		DCBE20B221673C69005E5B9F /* ListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE20B121673C69005E5B9F /* ListsController.swift */; };
 		DCEA5D7921650B1200D073B4 /* TestImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCEA5D7821650B1200D073B4 /* TestImages.xcassets */; };
@@ -34,10 +43,19 @@
 		DC04A1292165BEB4004D5BEE /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		DC16D1A52167202F00E4925C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC50FB0F215BE6A40016CBB9 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		DC6EE8A1216B6C0A004E98B9 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		DC6EE8A3216B7038004E98B9 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		DC6EE8A5216B70C7004E98B9 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		DC6EE8A7216B7205004E98B9 /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
+		DC6EE8A9216B7268004E98B9 /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
 		DC7B697221646E9800A12F2F /* CustomMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuHeaderView.swift; sourceTree = "<group>"; };
 		DC7B69742164825F00A12F2F /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
 		DC7B69772164833800A12F2F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		DC8290EC2161EC2000416BB5 /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
+		DCA67DB5216B10CF0085FE0D /* ChatroomsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomsMenuController.swift; sourceTree = "<group>"; };
+		DCA67DB7216B1BA60085FE0D /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		DCA67DB9216B22BB0085FE0D /* ChatroomMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomMenuCell.swift; sourceTree = "<group>"; };
+		DCA9E63D216C3B7C000B83AF /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		DCB807D42165ECCA00766580 /* MenuItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsList.swift; sourceTree = "<group>"; };
 		DCBE20B121673C69005E5B9F /* ListsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsController.swift; sourceTree = "<group>"; };
 		DCEA5D7821650B1200D073B4 /* TestImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestImages.xcassets; sourceTree = "<group>"; };
@@ -84,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				DC8290EB2161EBEE00416BB5 /* Base */,
+				DCA67DB5216B10CF0085FE0D /* ChatroomsMenuController.swift */,
 				DCF2C1A5215B5CC1001BE17D /* HomeController.swift */,
 				DC50FB0F215BE6A40016CBB9 /* MenuController.swift */,
 				DCBE20B121673C69005E5B9F /* ListsController.swift */,
@@ -99,6 +118,7 @@
 				DC04A1272165BDE4004D5BEE /* MenuItemCell.swift */,
 				DC7B69742164825F00A12F2F /* SpacerView.swift */,
 				DCEA5D7A21650F6B00D073B4 /* ProfileImageView.swift */,
+				DCA67DB9216B22BB0085FE0D /* ChatroomMenuCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +128,12 @@
 			children = (
 				DC7B69772164833800A12F2F /* BaseView.swift */,
 				DC04A1292165BEB4004D5BEE /* BaseCell.swift */,
+				DCA9E63D216C3B7C000B83AF /* BaseLabel.swift */,
+				DC6EE8A1216B6C0A004E98B9 /* UIColorExtensions.swift */,
+				DC6EE8A7216B7205004E98B9 /* UIEdgeInsetsExtensions.swift */,
+				DC6EE8A9216B7268004E98B9 /* UIStackViewExtensions.swift */,
+				DC6EE8A3216B7038004E98B9 /* UIViewExtensions.swift */,
+				DC6EE8A5216B70C7004E98B9 /* UIViewControllerExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -132,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				DCEA5D7821650B1200D073B4 /* TestImages.xcassets */,
+				DCA67DB7216B1BA60085FE0D /* ColorAssets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -178,11 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCF2C1B2215B5CC2001BE17D /* Build configuration list for PBXNativeTarget "SlideOutMenu" */;
 			buildPhases = (
-				DC43CC48215B640C00B7A746 /* SwiftLint */,
 				7A7F1836AE30E295A63A8FC0 /* [CP] Check Pods Manifest.lock */,
+				DC43CC48215B640C00B7A746 /* SwiftLint */,
 				DCF2C19C215B5CC0001BE17D /* Sources */,
 				DCF2C19D215B5CC0001BE17D /* Frameworks */,
 				DCF2C19E215B5CC0001BE17D /* Resources */,
+				E74D4A1E6B6A68EF29CBA27A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +261,7 @@
 			files = (
 				DCF2C1AE215B5CC2001BE17D /* LaunchScreen.storyboard in Resources */,
 				DCEA5D7921650B1200D073B4 /* TestImages.xcassets in Resources */,
+				DCA67DB8216B1BA60085FE0D /* ColorAssets.xcassets in Resources */,
 				DCF2C1AB215B5CC2001BE17D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +309,28 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		E74D4A1E6B6A68EF29CBA27A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlideOutMenu/Pods-SlideOutMenu-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GestureRecognizerClosures/GestureRecognizerClosures.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GestureRecognizerClosures.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlideOutMenu/Pods-SlideOutMenu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -288,9 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCB807D52165ECCA00766580 /* MenuItemsList.swift in Sources */,
+				DCA9E63E216C3B7C000B83AF /* BaseLabel.swift in Sources */,
+				DC6EE8A8216B7205004E98B9 /* UIEdgeInsetsExtensions.swift in Sources */,
 				DCEA5D7B21650F6B00D073B4 /* ProfileImageView.swift in Sources */,
 				DCF2C1A6215B5CC1001BE17D /* HomeController.swift in Sources */,
 				DC50FB10215BE6A50016CBB9 /* MenuController.swift in Sources */,
+				DC6EE8AA216B7268004E98B9 /* UIStackViewExtensions.swift in Sources */,
+				DC6EE8A6216B70C7004E98B9 /* UIViewControllerExtensions.swift in Sources */,
 				DC7B69752164825F00A12F2F /* SpacerView.swift in Sources */,
 				DCF2C1A4215B5CC1001BE17D /* AppDelegate.swift in Sources */,
 				DC7B69782164833800A12F2F /* BaseView.swift in Sources */,
@@ -299,7 +354,11 @@
 				DC7B697321646E9800A12F2F /* CustomMenuHeaderView.swift in Sources */,
 				DC04A12A2165BEB4004D5BEE /* BaseCell.swift in Sources */,
 				DCEC956F2168A58100880F29 /* BookmarksController.swift in Sources */,
+				DCA67DBA216B22BB0085FE0D /* ChatroomMenuCell.swift in Sources */,
 				DC8290ED2161EC2000416BB5 /* BaseSlidingController.swift in Sources */,
+				DC6EE8A4216B7038004E98B9 /* UIViewExtensions.swift in Sources */,
+				DCA67DB6216B10CF0085FE0D /* ChatroomsMenuController.swift in Sources */,
+				DC6EE8A2216B6C0A004E98B9 /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

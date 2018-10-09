@@ -5,31 +5,9 @@
 //  Created by John Martin on 9/30/18.
 //  Copyright © 2018 John Martin. All rights reserved.
 //
-
+import GestureRecognizerClosures
 import UIKit
 
-extension CGFloat {
-    public init(_ value: Bool) {
-        self = value ? 1 : 0
-    }
-}
-extension UIViewController {
-    func addChildren(_ children: UIViewController...) {
-        children.forEach { addChild($0) }
-    }
-}
-
-extension UIView {
-    func addSubviews(_ views: UIView...) {
-        views.forEach {
-            addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            if $0 is UIStackView {
-                ($0 as! UIStackView).isLayoutMarginsRelativeArrangement = true
-            }
-        }
-    }
-}
 extension BaseSlidingController: BaseSlidingControllerDelegate {
     func didSelectMenuItem(with item: MenuItemType) {
         performRightViewCleanUp()
@@ -64,6 +42,8 @@ class MenuContainerView: UIView {}
 class DarkCoverView: UIView {}
 
 class BaseSlidingController: UIViewController {
+    private let menuController = ChatroomsMenuController()
+
     private var redViewLeadingConstraint: NSLayoutConstraint!
     private var redViewTrailingConstraint: NSLayoutConstraint!
 
@@ -77,6 +57,7 @@ class BaseSlidingController: UIViewController {
             (redViewLeadingConstraint.constant, redViewTrailingConstraint.constant) =
                                                                     isMenuOpened ? (menuWidth, menuWidth) : (0, 0)
             performAnimations()
+            setNeedsStatusBarAppearanceUpdate()
         }
     }
 
@@ -95,7 +76,7 @@ class BaseSlidingController: UIViewController {
         let view = DarkCoverView()
         view.backgroundColor = UIColor(white: 0, alpha: 0.7)
         view.alpha = 0
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss)))
+        view.onTap {_ in self.closeMenu() }
         return view
     }()
 
@@ -108,13 +89,13 @@ class BaseSlidingController: UIViewController {
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))))
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return isMenuOpened ? .lightContent : .default
+    }
+
     fileprivate func performRightViewCleanUp() {
         rightViewController.view.removeFromSuperview()
         rightViewController.removeFromParent()
-    }
-
-    @objc private func handleTapDismiss() {
-        closeMenu()
     }
 
     @objc private func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
@@ -124,7 +105,6 @@ class BaseSlidingController: UIViewController {
         let x = max(0, min(menuWidth, translationX))
 
         (redViewLeadingConstraint.constant, redViewTrailingConstraint.constant) = (x, x)
-        //redViewTrailingConstraint.constant = x
 
         darkCoverView.alpha = x / menuWidth
 
@@ -133,7 +113,7 @@ class BaseSlidingController: UIViewController {
         }
     }
 
-    enum MenuStatus {
+    fileprivate enum MenuStatus {
         case isOpening
         case isClosing
     }
@@ -198,17 +178,15 @@ class BaseSlidingController: UIViewController {
     }
 
     fileprivate func setupViewControllers() {
-        let menuController = MenuController()
-
         let homeView = rightViewController.view!
         let menuView = menuController.view!
 
         redView.addSubviews(homeView, darkCoverView)
-        blueView.addSubviews(menuView)
+        blueView.addSubview(menuView)
 
-        homeView.fillSuperview(redView)
-        menuView.fillSuperview(blueView)
-        darkCoverView.fillSuperview(redView)
+        homeView.fillSuperview()
+        menuView.fillSuperview()
+        darkCoverView.fillSuperview()
 
         addChildren(rightViewController, menuController)
     }

@@ -45,7 +45,7 @@ class MenuItemCell: BaseCell {
         ]
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews, spacing: 12)
 
-        addSubviews(stackView)
+        addSubview(stackView)
         stackView.fillSuperview()
 
         stackView.layoutMargins = UIEdgeInsets(vertical: 8, horizontal: 12)

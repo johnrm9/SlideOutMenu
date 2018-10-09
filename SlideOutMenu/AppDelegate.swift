@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct Constants {
+    static let chatrromsBackgroundColor = "ChatrromsBackgroundColor"
+    static let chatroomCellColor = "ChatroomCellColor"
+    static let chatroomTextColor = "ChatroomTextColor"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
