@@ -48,7 +48,7 @@ class MenuItemCell: BaseCell {
         addSubview(stackView)
         stackView.fillSuperview()
 
-        stackView.layoutMargins = UIEdgeInsets(vertical: 8, horizontal: 12)
+        stackView.setMargins(.init(vertical: 8, horizontal: 12))
     }
 
     fileprivate class IconImageView: UIImageView {

@@ -13,3 +13,10 @@ extension UIViewController {
         children.forEach { addChild($0) }
     }
 }
+
+extension UIViewController {
+    func performCleanup() {
+        view.removeFromSuperview()
+        removeFromParent()
+    }
+}

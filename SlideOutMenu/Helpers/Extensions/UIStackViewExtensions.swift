@@ -17,3 +17,10 @@ extension UIStackView {
         self.spacing = spacing
     }
 }
+
+extension UIStackView {
+    func setMargins(_ margins: UIEdgeInsets) {
+        isLayoutMarginsRelativeArrangement = true
+        layoutMargins = margins
+    }
+}

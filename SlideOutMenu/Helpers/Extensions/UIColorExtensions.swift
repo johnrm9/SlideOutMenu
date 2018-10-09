@@ -12,6 +12,7 @@ extension UIColor {
     static let chatrromsBackgroundColor = UIColor(named: Constants.chatrromsBackgroundColor) ?? .rgb(r: 78, g: 56, b: 73)
     static let chatroomCellColor = UIColor(named: Constants.chatroomCellColor) ?? .rgb(r: 75, g: 153, b: 138)
     static let chatroomTextColor = UIColor(named: Constants.chatroomTextColor) ?? .rgb(r: 121, g: 104, b: 119)
+    static let chatroomsSeachBackgroudColor = UIColor(named: Constants.chatroomsSeachBackgroudColor) ?? .rgb(r: 65, g: 47, b: 63)
 }
 
 extension UIColor {

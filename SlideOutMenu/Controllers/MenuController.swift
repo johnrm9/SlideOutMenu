@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol BaseSlidingControllerDelegate: class {
     func didSelectMenuItem(with item: MenuItemType)
 }

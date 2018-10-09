@@ -61,7 +61,7 @@ class CustomMenuHeaderView: BaseView {
         addSubview(stackView)
         stackView.fillSuperview()
 
-        stackView.layoutMargins = UIEdgeInsets(all: 24)
+        stackView.setMargins(.init(all: 24))
     }
 
     fileprivate func setupComponents() {

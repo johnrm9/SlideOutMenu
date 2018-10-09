@@ -8,12 +8,8 @@
 
 import UIKit
 
-struct ChatRoomGroup {
-    let title: String
-    let names: [String]
-}
-
 class ChatroomsMenuController: UITableViewController {
+
     fileprivate class ChatroomHeaderLabel: BaseLabel {
         override func drawText(in rect: CGRect) {
             super.drawText(in: rect.insetBy(dx: 16, dy: 0))
@@ -24,11 +20,8 @@ class ChatroomsMenuController: UITableViewController {
             self.textColor = .chatroomTextColor
         }
     }
-    private let chatroomGroups = [
-        ChatRoomGroup(title: "UNREADS", names: ["general", "introductions"]),
-        ChatRoomGroup(title: "CHANNELS", names: ["jobs"]),
-        ChatRoomGroup(title: "DIRECT MESSAGES", names: ["Brian Voong", "Steve Jobs", "Tim Cook", "Donald J. Trump"])
-    ]
+
+    private let chatRoomGroupsList = ChatRoomGroupsList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +30,8 @@ class ChatroomsMenuController: UITableViewController {
         tableView.alwaysBounceVertical = true
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return chatroomGroups[section].title
-    }
-
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let chatRoomGroup = chatroomGroups[section]
-        let text = chatRoomGroup.title
+        let text = chatRoomGroupsList[section].title
         return ChatroomHeaderLabel(text: text)
     }
 
@@ -52,17 +40,17 @@ class ChatroomsMenuController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return chatroomGroups.count
+        return chatRoomGroupsList.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatroomGroups[section].names.count
+        return chatRoomGroupsList[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ChatroomMenuCell(style: .default, reuseIdentifier: nil)
 
-        let chatGroupName = chatroomGroups[indexPath.section].names[indexPath.row]
+        let chatGroupName = chatRoomGroupsList[indexPath.section, indexPath.row]
         cell.chatGroupName = chatGroupName
 
         return cell

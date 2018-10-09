@@ -12,6 +12,7 @@ struct Constants {
     static let chatrromsBackgroundColor = "ChatrromsBackgroundColor"
     static let chatroomCellColor = "ChatroomCellColor"
     static let chatroomTextColor = "ChatroomTextColor"
+    static let chatroomsSeachBackgroudColor = "ChatroomsSeachBackgroudColor"
 }
 
 @UIApplicationMain
@@ -24,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.rootViewController = BaseSlidingController()
-
         //window?.rootViewController = UINavigationController(rootViewController: HomeController())
         return true
     }

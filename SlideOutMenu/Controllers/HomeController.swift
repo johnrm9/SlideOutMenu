@@ -5,7 +5,7 @@
 //  Created by John Martin on 9/25/18.
 //  Copyright © 2018 John Martin. All rights reserved.
 //
-
+import GestureRecognizerClosures
 import UIKit
 
 class HomeController: UITableViewController {
@@ -20,10 +20,9 @@ class HomeController: UITableViewController {
 
     fileprivate func setupNavigationItems() {
         navigationItem.title = "Home"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self,
-                                                    action: #selector(handleOpen))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hide", style: .plain, target: self,
-                                                    action: #selector(handleHide))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Open", style: .plain) {_ in
+            (UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingController)?.openMenu()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,14 +33,6 @@ class HomeController: UITableViewController {
         let cell =  UITableViewCell(style: .default, reuseIdentifier: cellId)
         cell.textLabel?.text = "Row: \(indexPath.row)"
         return cell
-    }
-
-    @objc func handleOpen() {
-        (UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingController)?.openMenu()
-    }
-
-    @objc func handleHide() {
-        (UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingController)?.closeMenu()
     }
 }
 
