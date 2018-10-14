@@ -43,7 +43,6 @@ class DarkCoverView: UIView {}
 
 class BaseSlidingController: UIViewController {
     //private let menuController = MenuController()
-    //private let menuController = ChatroomsMenuController()
     private let menuController = ChatroomsMenuContainerController()
 
     private var redViewLeadingConstraint: NSLayoutConstraint!
@@ -56,8 +55,8 @@ class BaseSlidingController: UIViewController {
 
     fileprivate var isMenuOpened = false {
         didSet {
-            (redViewLeadingConstraint.constant, redViewTrailingConstraint.constant) =
-                                                                    isMenuOpened ? (menuWidth, menuWidth) : (0, 0)
+            let x: CGFloat = isMenuOpened ? menuWidth : 0
+            (redViewLeadingConstraint.constant, redViewTrailingConstraint.constant) = (x, x)
             performAnimations()
             setNeedsStatusBarAppearanceUpdate()
         }

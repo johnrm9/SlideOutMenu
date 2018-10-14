@@ -43,15 +43,13 @@ class MenuItemCell: BaseCell {
             titleLabel,
             UIView()
         ]
-        let stackView = UIStackView(arrangedSubviews: arrangedSubviews, spacing: 12)
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews, spacing: 12, margins: .init(vertical: 8, horizontal: 12))
 
         addSubview(stackView)
         stackView.fillSuperview()
-
-        stackView.setMargins(.init(vertical: 8, horizontal: 12))
     }
 
     fileprivate class IconImageView: UIImageView {
-        override var intrinsicContentSize: CGSize { return CGSize(width: 44, height: 44) }
+        override var intrinsicContentSize: CGSize { return CGSize(all: 44) }
     }
 }

@@ -56,12 +56,10 @@ class CustomMenuHeaderView: BaseView {
             SpacerView(space: 16),
             statsLabel
         ]
-        let stackView = UIStackView(arrangedSubviews: arrangedSubviews, axis: .vertical, spacing: 4)
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews, axis: .vertical, spacing: 4, margins: .init(all: 24))
 
         addSubview(stackView)
         stackView.fillSuperview()
-
-        stackView.setMargins(.init(all: 24))
     }
 
     fileprivate func setupComponents() {

@@ -18,6 +18,8 @@ class ChatroomsMenuContainerController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .chatrromsBackgroundColor
 
+        searchContainer.searchBar.delegate = chatroomsMenuController
+
         let chatroomsView = chatroomsMenuController.view!
         view.addSubview(chatroomsView)
 
@@ -31,10 +33,10 @@ class ChatroomsMenuContainerController: UIViewController {
 
 class SearchContainerView: BaseView {
 
-    private let searchBar: UISearchBar = {
+    public let searchBar: UISearchBar  = {
         let sb = UISearchBar()
         sb.searchBarStyle = .minimal
-        sb.placeholder = "Enter search text"
+        sb.placeholder = "Jump to…"
         return sb
     }()
 

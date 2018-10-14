@@ -19,17 +19,38 @@ class ChatRoomGroupsList {
         ChatRoomGroup(title: "CHANNELS", names: ["jobs"]),
         ChatRoomGroup(title: "DIRECT MESSAGES", names: ["Brian Voong", "Steve Jobs", "Tim Cook", "Donald J. Trump"])
     ]
+    private var filteredResults = [[String]]()
+    private let originalResults: [[String]]
+
+    func loadSearchResults(searchText: String) {
+        if !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            filteredResults = originalResults.map({ (group) -> [String] in
+                return group.filter { $0.lowercased().contains(searchText.lowercased())}
+            })
+        } else {
+            filteredResults = originalResults
+        }
+    }
+
+    init() {
+        var groupNames = [[String]]()
+        chatroomGroups.forEach { (group) in
+            groupNames.append(group.names)
+        }
+        self.originalResults = groupNames
+        self.filteredResults = self.originalResults
+    }
 
     subscript(section: Int) -> (title: String, names: [String]) {
-        return (title: chatroomGroups[section].title, names: chatroomGroups[section].names)
+        return (title: chatroomGroups[section].title, names: filteredResults[section])
     }
 
     subscript(section: Int, row: Int) -> String {
-        return chatroomGroups[section].names[row]
+        return filteredResults[section][row]
     }
 
     subscript(section: Int) -> [String] {
-        return chatroomGroups[section].names
+        return filteredResults[section]
     }
 
     var count: Int {

@@ -28,7 +28,6 @@ class MenuController: UITableViewController {
         super.viewDidLoad()
 
         tableView.separatorStyle = .none
-        //tableView.alwaysBounceVertical = false
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

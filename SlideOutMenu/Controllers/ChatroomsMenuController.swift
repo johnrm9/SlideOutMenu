@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension ChatroomsMenuController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        chatRoomGroupsList.loadSearchResults(searchText: searchText)
+        tableView.reloadData()
+    }
+}
+
 class ChatroomsMenuController: UITableViewController {
 
     fileprivate class ChatroomHeaderLabel: BaseLabel {
