@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.rootViewController = BaseSlidingController()
-        //window?.rootViewController = UINavigationController(rootViewController: HomeController())
+
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .white
         return true
     }
 }

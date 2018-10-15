@@ -73,13 +73,11 @@ class BaseSlidingController: UIViewController {
         return view
     }()
 
-    private lazy var darkCoverView: DarkCoverView = {
-        let view = DarkCoverView()
+    private lazy var darkCoverView: DarkCoverView = make { (view) in
         view.backgroundColor = UIColor(white: 0, alpha: 0.7)
         view.alpha = 0
         view.onTap {_ in self.closeMenu() }
-        return view
-    }()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +100,7 @@ class BaseSlidingController: UIViewController {
         let translation = gestureRecognizer.translation(in: view)
 
         let translationX = isMenuOpened ? translation.x + menuWidth : translation.x
+
         let x = max(0, min(menuWidth, translationX))
 
         (redViewLeadingConstraint.constant, redViewTrailingConstraint.constant) = (x, x)

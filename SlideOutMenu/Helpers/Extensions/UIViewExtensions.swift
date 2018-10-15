@@ -25,7 +25,6 @@ extension UIView {
                 padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
 
         translatesAutoresizingMaskIntoConstraints = false
-
         if let top = top {
             self.topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
         }
@@ -49,7 +48,6 @@ extension UIView {
         if size.height != 0 {
             self.heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
-
     }
 }
 
@@ -61,7 +59,19 @@ extension UIView {
             leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: padding.left).isActive = true
             bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -padding.bottom).isActive = true
             trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -padding.right).isActive = true
+        }
+    }
+}
 
+extension UIView {
+    func centerInSuperview(constant: CGFloat = 0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        if let superview = superview {
+            centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+            centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+            if constant != 0 {
+                widthAnchor.constraint(equalTo: superview.widthAnchor, constant: constant).isActive = true
+            }
         }
     }
 }

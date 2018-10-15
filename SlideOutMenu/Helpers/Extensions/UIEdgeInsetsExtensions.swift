@@ -18,7 +18,10 @@ extension UIEdgeInsets {
         if vertical != 0 { (top, bottom) = (vertical, vertical) }
         if horizontal != 0 { (left, right) = (horizontal, horizontal) }
     }
-
+    public init(bottom: CGFloat) {
+        self.init()
+        (top, self.bottom, left, right) = (0, bottom, 0, 0)
+    }
 }
 extension UIEdgeInsets {
     public func insetBy(bottom: CGFloat) -> UIEdgeInsets {

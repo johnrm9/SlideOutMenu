@@ -32,6 +32,17 @@ class ChatRoomGroupsList {
         }
     }
 
+    func jumpTo() -> IndexPath? {
+        guard filteredResults != originalResults else { return nil }
+        var indexPath: IndexPath?
+
+        for section in filteredResults.indices where filteredResults[section].count > 0 {
+            indexPath = IndexPath(row: 0, section: section)
+            break
+        }
+        return indexPath
+    }
+
     init() {
         var groupNames = [[String]]()
         chatroomGroups.forEach { (group) in

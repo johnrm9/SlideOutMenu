@@ -12,6 +12,8 @@ extension ChatroomsMenuController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         chatRoomGroupsList.loadSearchResults(searchText: searchText)
         tableView.reloadData()
+        guard let indexPath = chatRoomGroupsList.jumpTo() else { return }
+        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .bottom)
     }
 }
 

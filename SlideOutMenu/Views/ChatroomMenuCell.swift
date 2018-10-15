@@ -22,15 +22,13 @@ class ChatroomMenuCell: BaseCell {
         }
     }
 
-    private lazy var bgView: UIView = {
-        let view = UIView()
+    private lazy var bgView: UIView = make { (view) in
         view.backgroundColor = .chatroomCellColor
         view.layer.cornerRadius = 5
         self.addSubview(view)
         view.fillSuperview(padding: .init(horizontal: 8))
         sendSubviewToBack(view)
-        return view
-    }()
+    }
 
     override func setupViews() {
         super.setupViews()

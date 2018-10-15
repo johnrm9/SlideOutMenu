@@ -33,12 +33,11 @@ class ChatroomsMenuContainerController: UIViewController {
 
 class SearchContainerView: BaseView {
 
-    public let searchBar: UISearchBar  = {
-        let sb = UISearchBar()
+    public let searchBar: UISearchBar = make { (sb) in
         sb.searchBarStyle = .minimal
+        sb.autocapitalizationType = .none
         sb.placeholder = "Jump to…"
-        return sb
-    }()
+    }
 
     private let rocketImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "rocket") /* rocket */)
@@ -51,10 +50,9 @@ class SearchContainerView: BaseView {
     override func setupViews() {
         super.setupViews()
         backgroundColor = .chatroomsSeachBackgroudColor
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .white
 
         addSubviews(searchBar, rocketImageView)
         rocketImageView.anchor(leading: safeAreaLayoutGuide.leadingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 10, bottom: 10, right: 0), size: .init(all: 44))
-        searchBar.anchor(leading: rocketImageView.trailingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 4, right: 0))
+        searchBar.anchor(leading: rocketImageView.trailingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(bottom: 4))
     }
 }
